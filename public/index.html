@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Scraping With Mongoose</title>
+    <style>
+      /* body { background-color: #F2F6D0 } */
+      #wrapper {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5%;
+      }
+      #articles {
+        display: inline-block;
+        overflow: auto;
+        width: 60%;
+        height: 700px;
+      }
+      #notes {
+        float: right;
+        width: 30%;
+      }
+      textarea, input {
+        display: block;
+        width: 100%;
+        /* background-color: #FCF5C7; */
+      }
+      input {
+        height: 36px;
+        font-size: 24px;
+      }
+      textarea {
+        height: 200px;
+        font-size: 18px;
+      }
+      p {
+        color: black;
+      }
+    </style>
+ 
+    <!-- <div id="wrapper">
+      <h1>Note Scraper</h1>
+      <h2><i>If you can do this...the homework should be no problem.</i></h2>
+      <div id="articles"></div>
+      <div id="notes"></div>
+    </div> -->
+   
+
+
+
+<head>
+  <meta name="msvalidate.01" content="2DFFA78FAF51BF76C9645E0797B9766E" />
+  <meta name="google-site-verification" content="tJvCQeL52YjVvKDO6P3P5FPsT4sxT2t1TfpL02TVK0Q" />
+<script>window._epn = {campaign:5338320827};</script>,<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+
+</head>
+<header> 
+  
+
+  <title>Server Parts List and Tutorials </title>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Mukta+Mahee:400,700|Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Coiny|Indie+Flower|Nanum+Gothic" rel="stylesheet">
+
+
+  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <link rel='stylesheet' href='style.css' />
+    <link rel='stylesheet' href='main.css' />
+    <script language="javascript" type="text/javascript" src="main.js"></script>
+    <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ 
+    <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+
+    <div id="feed"></div>
+
+
+  <meta name="author" content="www.twitter.com/cheeriottis">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/core.css">
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+</header>
+
+
+<div class="topnav">
+    <a href="http://kithomelab.com" class="action-button">KitHomeLab</a>
+    <a href="http://kithomelab.com/about.html" class="action-button  animate red"> Kit_1.0</a>
+   <!-- <a href="http://kithomelab.com/ryankit.html" class="action-button  animate red">Kit_2.0</a>
+    <a href="http://kithomelab.com/cloud.html" class="action-button  animate red">Kit_3.0</a>   -->
+</div>
+
+
+ <!-- <h2 class="padding1">Meet Kit!</h2> 
+ <div class="col-sm-12">   <img class="clip-circle1" src="images/logokit.png" alt="top header image""> 
+  <img class="container"  src="images/kit.png" alt="alvin1" border="0"> -->
+
+
+ <h1 class=""><center>Kit Brings The Cloud To You </center></h1>
+
+  <!--   <h2 class="padding1"><center>Kit is a powerful Home Cloud Solution that is a great for beginners. Use my Step by Step guide to host Media, Network Storage, File Serving, Personal Cloud, and so much more.</center></h2>-->
+
+  
+ <img class="container"  src="https://image.ibb.co/edP1re/222.png" alt="alvin1" border="0"> 
+  
+
+<div class="abcde ">
+<center><input type="button" class="btn btn-info abcd" value="Kit_1.0 Parts List" onclick=" relocate_home()"></center>
+
+<script>
+function relocate_home()
+{
+     location.href = "http://kithomelab.com/about.html";
+} 
+</script>
+ </div>
+
+ </div>
+   <div class="container">
+
+    <h2 class="padding1"> If your building a home network on a budget and want to get the best equipment possible. I get it. That was me 6 months ago. </h2>
+
+
+  </div>
+
+  <div id="articles"></div>
+  <div id="notes"></div>
+
+
+
+<div>
+
+<body class="body">
+
+
+
+
+
+
+
+<body class="html">
+
+
+
+
+
+
+
+ <!-- <img class="container1"   src="https://d1yn1kh78jj1rr.cloudfront.net/image/preview/rDtN98Qoishumwih/graphicstock-photo-of-happy-young-man-dressed-in-black-t-shirt-standing-over-white-background-showing-display-of-his-laptop-computer-and-gesturing_r_xXlchI2g_SB_PM.jpg" alt="Robot Or Man."> 
+
+<h1 class="paddinga">Hi, I'm Stephen Hornbeek! I'm here to show you through my own experiments exactly how you can build a home network that works for you. </h1>  
+
+
+
+
+
+<img class="container"   src="https://image.ibb.co/nHVQUz/0me_1.png" alt="Robot Or Man."> 
+
+
+
+
+<h1 class="paddinga">This site is a resource for building servers</h1> -->
+
+ <img class="container1"   src="https://womenplayhockeytoo.com/wp-content/uploads/2015/07/Beginner-Banner-Blue.png" alt="Robot Or Man.">
+
+<h2 class="padding1">If you have never worked with a server before this site is a great resource that will help you get started from scratch to becoming a master at server configurations and network development. (Well maybe not a "master" but definitely better).</h2>
+
+<!--
+<h1 class="paddinga"> I'm an Industrial designer and software developer</h1>
+
+<h2 class="padding1">My goal for each kit is to build a digital and physical work of art that becomes the work horse in any home. Every part of Kit focuses on the details. (things like cable choices and lenghts) size, layout, fetaures, cost, manufactures reputation, are all complex details that we review before  a kits part list is released. 
+</h2> 
+
+-->
+
+<h1 class="paddinga">Lets talk about the different tyes of servers</h1>
+
+  <h2 class="padding1"> Your options are to buy a tower server, a rack server, or a super powerful blade server. Take a look at the pros and cons of each below. </h2>
+
+
+
+
+
+ <!-- <h2 class="padding">A 48u rack systems start at $100,000  </h2> -->
+
+
+
+<div class="row">
+ 
+  
+  <div class='col-xs-4 '><img class="clip-circle1" src="https://assets.store.hp.com/hpusstore/images/3pp_573X430/3q8203.png" alt="Disney Consumer Products">  
+  <li><a href="https://www.google.com/search?hl=en&biw=1409&bih=881&tbm=shop&ei=DDQQW9q6OfLi9AOk173QCA&q=tower+servers+for+sale&oq=tower+servers+for+sale&gs_l=psy-ab.3...22098.24263.0.25599.9.9.0.0.0.0.94.582.9.9.0....0...1c.1.64.psy-ab..0.1.62...0.0.OzhiUNoOjj4" target="_blank"><strong>Tower Server</strong></a></li>
+
+    <span class="price">$500 - 4000</span>
+  <ul class="features">
+    <li class="darkc">Pros</li>
+    <li class="dark">Scalability and ease of upgrade</li>
+    <li class="dark">Cost-effective</li> 
+    <li class="dark">Cools easily</li>  
+  </ul>
+   <ul class="features">
+    <li class="darkb">Con</li>
+    <li class="dark">Consumes a lot of space</li>
+    <li class="dark">Provides a basic level of performance</li> 
+    <li class="dark">Complicated cable management</li>   
+  </ul>
+
+  </div>
+
+    <div class='col-xs-4 '><img class="clip-circle1"   src="https://assets.store.hp.com/hpusstore/images/3pp_573X430/4r2087.png" alt="Robot Or Man.">
+  <li><a href="https://www.google.com/search?hl=en&biw=1409&bih=881&tbm=shop&ei=7TMQW5_NFfH19AOg_ZyQAg&q=rack+servers+for+sale&oq=rack+servers+for+sale&gs_l=psy-ab.3..0.27267.29560.0.30749.9.9.0.0.0.0.74.580.9.9.0....0...1c.1.64.psy-ab..0.2.130....0.xhfMp_zo53Q#spd=13806418882898340103" target="_blank"><strong>Rack Server</strong></a></li>
+ 
+ <span class="price">$100 - 20,000</span>
+  <ul class="features">
+    <li class="darkc">Pros</li>
+    <li class="dark">Failure containment</li>
+    <li class="dark">Simplified cable management</li> 
+    <li class="dark">Cost-effective</li>  
+  </ul>
+   <ul class="features">
+    <li class="darkb">Con</li>
+    <li class="dark">Power usage</li>
+    <li class="dark">Maintenance</li>
+    <li class="dark">Noisy</li>   
+  </ul>
+  </div>
+
+   <div class='col-xs-4 '><img class="clip-circle1"   src="http://www.fujitsu.com/lu/Images/W-CM29168_tcm67-9433.png" alt="Robot Or Man.">
+  <li><li><a href="https://www.google.com/search?q=blade+servers+for+sale&hl=en&source=univ&tbm=shop&tbo=u&sa=X&ved=0ahUKEwjlmeyhv7DbAhViMX0KHcUDA3IQsxgIlgI&biw=1409&bih=881" target="_blank"><strong>Blade Server</strong></a></li>
+    <span class="price">$5,000 - 68,000</span>
+     <ul class="features">
+     
+    <li class="darkc">Pro</li>
+    <li class="dark">Load balancing and failover</li>
+    <li class="dark">Centralized management</li>   
+    <li class="dark">Size and form-factor</li>
+  </ul>
+   <ul class="features">
+    <li class="darkb">Con</li>
+    <li class="dark">Expensive configuration</li>
+    <li class="dark">HVAC</li> 
+    <li class="dark">Noisy</li>  
+  </ul>
+  </div>
+</div>
+
+
+
+<h1 class="paddinga">Kit Homelabs are built with HP or Dell rack servers</h1>
+
+
+<div class="row">
+   <div class='col-md-6 col-xs-11'><img class="clip-circle1" src="https://cdn3.bigcommerce.com/s-7x8bo4i/products/450/images/3225/DL360G7HiRes__42121.1469613248.1280.1280.png?c=2" alt="Robot Or Man.">   
+  </div>
+
+
+  <div class='col-md-6 col-xs-11'><img class="clip-circle1" src="https://image.ibb.co/inGpSK/r610_nobezel_40228_1519926047.png" alt="Stop School Shootings Today"">   
+  </div>
+</div>
+
+
+ 
+<h1 class="paddinga">Rack Servers can be really expensive. </h1>
+
+<h2 class="padding1">Kit HomeLabs fill the gap between $100,000 dollar rack system and $100 dollar tower and micro servers.</h2>
+
+<img class="container" src="images/racktow.png" alt="Robot Or Man.">
+
+
+
+<!-- The Average complete Kit HomeLab cost less then purchasing a single 1U server from the options listed below. --> 
+
+<h1 class="paddinga">Here are the MINIMUM SPECS for all Kit Homelabs</h1>
+
+<h2 class="padding1"> All Kits will have at least 64gb of memory and a dual processor with speeds of 2.5ghz or faster. This specific benchmark was set because anything smaller and less powerful you could get in a tower server or a low end rack server.  
+</h2>
+
+<img class="container" src="https://image.ibb.co/faUR5y/servertop.png" alt="servertop"> 
+
+
+
+<h1 class="paddinga">Check out the list of comparable 1u servers purchased from manufactures and IT companies. </h1>
+
+<div class="table-responsive">
+    <table class="table table-condensed">
+    <thead>
+            <tr>
+              <th data-priority="">Image</th>
+              <th data-priority="">Server</th>
+              <th data-priority="">Cost</th>
+            </tr>
+         
+
+
+
+            <tr>
+              <td>  <img class="container3" src="https://www.servethehome.com/wp-content/uploads/2017/07/Dell-EMC-PowerEdge-R640-Front.jpg" alt="First image""> </td>
+              <td><a href="http://www.dell.com/en-us/work/shop/cty/pdp/spd/poweredge-r640/pe_r640_12232_a?CID=307000&st=&VEN1=scMK58oqe,255034882484,901qz26673,c,,PE_R640_12232_A&VEN2=,&LID=5957976&dgc=st&dgseg=cbg&acd=1230921533720565&VEN3=425956535432605815" target="_blank"><strong>PowerEdge R640 Rack Server-Intel® Xeon® Gold 6126, Optional Operating System, 32GB Memory, 120GB Solid State Drive and a 3 Year ProSupport Warranty</strong></a></td>
+              <td>$5,129.00</td>
+            </tr>
+
+        
+             <tr>
+              <td>  <img class="container3" src="https://images10.newegg.com/NeweggImage/ProductImageCompressAll1280/2NS-0008-1AUE6-V19.jpg" alt="First image""> </td>
+              <td><a href="https://www.newegg.com/Product/Product.aspx?Item=2NS-0008-1AUE6&ignorebbr=1&nm_mc=KNC-GoogleAdwords-PC&cm_mmc=KNC-GoogleAdwords-PC-_-pla-_-Server%2FWorkstation+Systems-_-2NS-0008-1AUE6&gclid=Cj0KCQjwl7nYBRCwARIsAL7O7dGrOUbxxyh-Wng2tZBLuXQHPxGdoshTyN8_cEsqllzyalDOqL8Y1mUaAjXrEALw_wcB&gclsrc=aw.ds" target="_blank"><strong>Dell PowerEdge R630 - Server - rack-mountable - 1U - 2-way - 2 x Xeon E5-2660V4 / 2 GHz - RAM 32 GB - SAS - hot-swap 2.5" - HDD 1.2 TB - Matrox G200 - GigE - no OS - monitor: none</strong></a></td>
+              <td>$5,132.96</td>
+            </tr>
+
+
+             <tr>
+              <td>  <img class="container3" src="http://content.etilize.com/thumbnail/1010268285.jpg" alt="First image""> </td>
+              <td><a href="http://www.consutronix.com/10210020.html?gclid=Cj0KCQjwl7nYBRCwARIsAL7O7dEcS830t32zJiGGe01QwbeiPQ0jitdUkYbUu5hJYklodPoNBAmq3x8aAoesEALw_wcB" target="_blank"><strong>411361-001 - HPE ProLiant DL365 Performance - Server - rack-mountable - 1U - 2-way - 2 x Second-Generation Opteron 2218 / 2.6 GHz - RAM 2 GB - SAS - hot-swap 2.5" - no HDD - CD-RW / DVD - ATI ES1000 - GigE - monitor: none</strong></a></td>
+              <td>$3,989.14 </td>
+            </tr>
+
+
+             <tr>
+              <td>  <img class="container3" src="https://tekmentum.com/pub/media/catalog/product/cache/image/1000x1320/e9c3970ab036de70892d86c6d221abfe/1/0/1026894768.jpg" alt="First image""> </td>
+              <td><a href="https://tekmentum.com/lenovo-group-limited-70aa0001ux-lenovo-thinkserver-rd340-70aa0001ux-1u-rack-server-2-x-intel-xeon-e5-2450-v2-octa-core-8-core-2-50-ghz-128-gb-installed-ddr3l-sdram-3-60-tb-6-x-600-gb-hdd-serial-ata-600-6gb-s-sas-controller-0-1-5-6-10?gclid=Cj0KCQjwl7nYBRCwARIsAL7O7dFhr4uu-T6sGepUj704h3TAeQsSPC8y6QRbTQgGFe7DEjAFHv0HrY8aAmpZEALw_wcB"><strong>Lenovo ThinkServer RD340 70AA0001UX 1U Rack Server - 2 x Intel Xeon E5-2450 V2 Octa-core (8 Core) 2.50 GHz - 128 GB Installed DDR3L SDRAM - 3.60 TB (6 x 600 GB) HDD - Serial ATA/600, 6Gb/s SAS Controller - 0, 1, 5, 6, 10, 50, 60 RAID Levels - 1 x 550 W -</strong></a></td>
+              <td>$8,917.03</td>
+            </tr>
+
+
+             <tr>
+              <td>  <img class="container3" src="https://images10.newegg.com/ProductImageCompressAll1280/ACSJ_1_201801191777787185.jpg" alt="First image""> </td>
+              <td><a href="https://www.neweggbusiness.com/Product/Product.aspx?Item=9SIV18K6TR4681&nm_mc=KNC-GoogleBizMKPL-PC&cm_mmc=KNC-GoogleBizMKPL-PC-_-pla-_-Server%2FWorkstation+Systems-_-9SIV18K6TR4681&gclid=Cj0KCQjwl7nYBRCwARIsAL7O7dGzvHT0iqeHlu44snqAS80pYXW5vCFTeiPJKw8GyLPPaFPuT95o9RsaAialEALw_wcB&gclsrc=aw.ds" target="_blank"><strong>Refurbished: Supermicro CSE-815 X9DRI-LN4F+ 1U Server, 2x E5-2660v2 2.2GHz 10C, 768GB Memory, 4x 3.5" Trays Included, IPMIv2.0, Power Supply, Rails Included</strong></a></td>
+              <td>$7,752.00</td>
+            </tr>
+
+         
+    </tbody>
+  </table>
+
+</div>
+
+<!-- <h1 class="paddinga">The server is just the start of your homelab. </h1>
+
+ <h2 class="padding1">Home networks need aditional equipment like a modum, a network switch, a router, power supply and lets not for get the cables and rack parts.</h2>
+
+<img class="clip-circle3" src="https://home.heartofiowa.net/wp-content/uploads/2013/03/WiFi-Network-with-Switch-white-background.gif" alt="First image"> 
+
+
+<h1 class="paddinga">Combining all the components into a network can look sloppy and unfinished</h1>
+
+
+<img class="clip-circle" src="https://cloud81.files.wordpress.com/2010/08/img_0497.jpg" alt="First image"> 
+
+<h2 class="padding1">Kit homelab is designed to look complete and clean. Kit uses ultra slim cat 6 cables to keep your home network looking good from day one.</h2>
+
+ <td><img class="clip-circle2" src="images/cable.png" alt="4u frame""> </td> -->
+
+
+<h1 class="paddinga">This stuff looks expensive. Whats a Kit Homelab going to cost me?</h1>
+
+ <h2 class="padding1w">Build Kit_1.0 for $1114.00!</h2>
+
+<h2 class="padding1">The Kit_1.0 price point is around $1000 dollars. This range was chosen because under $1000 the network equipment won’t be powerful enough and over 5-10k you should just go to an IT company.</h2>
+
+<!-- <h2 class="padding1">The cost of all the components in the Kit_1.0 Homelab is a fraction of the cost for just 1 of the server listed above.</h2> -->
+
+
+<img class="container1"   src="https://image.ibb.co/idF8nK/kitabcds.png" alt="Robot Or Man.">
+ 
+<h1 class="paddinga">Kit_1.0 Home_lab parts list.</h1>
+
+
+
+
+
+<div class="table-responsive">
+    <table class="table table-condensed">
+    <thead>
+
+<div class="table-responsive">
+
+    
+
+    <table class="table table-condensed">
+    <thead>
+
+
+            <tr>
+              <th data-priority="">Item</th>
+              <th data-priority="">Image</th>
+              <th data-priority="">Notes</th>
+              <th data-priority="">Cost</th>
+              <th data-priority="">Quantity</th>
+            </tr>
+         
+
+            <tr>
+              <td><a href="https://www.ebay.com/itm/173335375307?rmvSB=true" target="_blank">HP DL360 G7 8-Core Server 2x E5540 QC 2.53GHz 96GB 4x Trays</a></td>
+              <td>  <img class="container3" src="images/hpserver.png" alt="First image""> </td>
+              <td>Processors: 2 X INTEL XEON QUAD CORE PROCESSOR E5630 2.53GHZ 12MB SMART CACHE 5.86GT/S QPI TDP 80W (refurbished) Comes with some storage! But we recommend adding the hard drives below!</td>
+              <td>$356.00</td>
+              <td>1 </td>
+            </tr>
+        
+             <tr>
+              <td><a href="https://www.amazon.com/146GB-HP-Dual-Drive-DG146BB976/dp/B003LLS6JC/ref=sr_1_fkmr0_1?ie=UTF8&qid=1529458957&sr=8-1-fkmr0&keywords=hp+2.5+hard+drive+164" target="_blank">146GB SAS HP 10K Dual Port Drive w/ Tray 2.5 DG146BB976</a></td>
+              <td> <img class="container3" src="images/tb1.png" alt="hp server"">  </td>
+              <td> New Retail Factory Sealed</td>
+              <td>$80.00</td>
+              <td>4</td>
+            </tr>
+
+   
+             <tr>
+              <td><a href="https://www.amazon.com/StarTech-com-Adjustable-Levelers-Management-4POSTRACK12U/dp/B00P1RJ9LS/ref=sr_1_4?s=electronics&ie=UTF8&qid=1529459309&sr=1-4&keywords=12U+rack" target="_blank">StarTech.com 12U Adjustable Depth Open Frame 4 Post Server Rack with Casters/Levelers and Cable Management Hooks 4POSTRACK12U Black</a></td>
+              <td><img class="container3" src="https://images-na.ssl-images-amazon.com/images/I/61J1wrLlbaL._SL1000_.jpg" alt="4u frame""> </td>
+              <td> 19" open frame rack is a rock solid foundation for rack-mount devices and optimized for SOHOs, small business, and research institutions</td>
+              <td>$182.00</td>
+              <td>1</td>
+            </tr>
+
+               <tr>
+              <td><a href="https://www.amazon.com/AC-Infinity-Cantilever-Universal-Heavy-Duty/dp/B01C9KYUG8/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1527977588&sr=1-1-catcorr&keywords=1U+Universal+Rack+Shelf%2C+for+19%E2%80%9D+equipment+racks" target="_blank"><strong>AC Infinity Vented Cantilever 1U Universal Rack Shelf, for 19” equipment racks.</strong></a> </td>
+               <td><img class="container3" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRknyP3K-gLGXWhsK2_6BELQCnEIs10hxBpYzEYnHnkfD16na8AEQ7zZC1fnixGTN8tnaQr1gk&usqp=CAE" alt="4u frame""> </td>
+                <td>Vent design maximizes airflow while maintaining structural integrity, 60 pound weight capacity </td>
+              <td>$24.00</td>
+              <td>1</td>
+            </tr>
+   
+             <tr>
+              <td><a href="https://www.amazon.com/ARRIS-SURFboard-SB6183-Docsis-Packaging/dp/B00MA5U1FW/ref=sr_1_1?s=musical-instruments&ie=UTF8&qid=1527981199&sr=8-1&keywords=arris+surfboard" target="_blank"><strong>ARRIS SURFboard SB6183 Modem 16x4 Docsis 3.0 Cable Modem- Retail Packaging- White</strong></a></td>
+               <td><img class="container3" src="images/modum.png" alt="Modem""> </td>
+                <td>Capable of the fastest download speeds available from cable providers</td>
+              <td>$69.00</td>
+              <td>1 </td>
+            </tr>
+             <tr>
+              <td><a href="https://www.amazon.com/TP-Link-Ethernet-Unmanaged-Rackmount-TL-SG1016/dp/B002HAJQGA/ref=sr_1_3?s=electronics&ie=UTF8&qid=1529460618&sr=1-3&keywords=rack+switch+gigabit"><strong>TP-Link 16-Port Gigabit Ethernet Unmanaged Switch | Plug and Play | Metal | Rackmount | Fanless | Limited Lifetime (TL-SG1016)</strong></a></td>
+                <td><img class="container3" src="https://images-na.ssl-images-amazon.com/images/I/71rKvMc05ML._SL1500_.jpg" alt="bufflo switch""> </td>
+                 <td>16-Gigabit ports provide instant large file transfers, 32Gbps Switching Capacity</td>
+              <td>$65.00</td>
+              <td>1 </td>
+            </tr>
+
+
+               <tr>
+              <td><a target="_blank" href="https://www.amazon.com/gp/product/B00R2AZLD2/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00R2AZLD2&linkCode=as2&tag=kithomelab-20&linkId=b0d6f592f642d0e52bfc15b84758539b">NETGEAR R6700 Nighthawk AC1750 Dual Band Smart WiFi Router, Gigabit Ethernet (R6700)</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=kithomelab-20&l=am2&o=1&a=B00R2AZLD2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></td>
+                <td><img class="container3" src="https://images-na.ssl-images-amazon.com/images/I/91-tQAAX4jL._SL1500_.jpg" alt="aris router""> </td>
+                 <td>AC1900 WiFi—600+1300 Mbps speeds, 1GHz Dual Core Processor, Ideal for homes with 12 or more WiFi devices</td>
+              <td>$90.00</td>
+              <td>1 </td>
+            </tr>
+            <tr>
+              <td><a href="https://www.amazon.com/6ft-Cat6-Ultra-Thin-Patch-Cable/dp/B074Q3N6BF/ref=sr_1_40?s=electronics&ie=UTF8&qid=1527979639&sr=1-40&keywords=Cat+6+Ultra+Thin+ethernet+cable" target="_blank"><strong>Snagless Cat 6 / Cat6 Ultra Thin Ethernet Cable (Thin Cat6 Cable) in Black</strong></a></td>
+              <td><img class="container3" src="images/cable.png" alt="4u frame""> </td>
+               <td>High Performance Cat6, 30 AWG, RJ45 Ethernet Patch Cable provides universal connectivity for LAN network components </td>
+              <td>$55.00</td>
+              <td>10</td>
+            </tr>
+
+
+             <tr>
+              <td><a href="https://www.amazon.com/CyberPower-CPS1215RM-Basic-Outlets-Rackmount/dp/B00077IG3O/ref=sr_1_1?s=electronics&ie=UTF8&qid=1527979730&sr=1-1&keywords=CyberPower+CPS1215RM+Basic+PDU%2C+120V%2F15A%2C+10+Outlets%2C+15ft+Power+Cord%2C+1U+Rackmount" target="_blank"><strong>CyberPower CPS1215RM Basic PDU, 120V/15A, 10 Outlets, 15ft Power Cord, 1U Rackmount</strong></a></td>
+               <td><img class="container3" src="images/power.png" alt="4u frame""> </td>
+                <td>10-outlet (rear) rackmount power distribution unit (PDU), provides 100 – 125 V 15A output</td>
+              <td>$44.95</td>
+              <td>1 </td>
+            </tr>
+      
+            <tr class"gray">
+              <td>Total</td>
+              <td></td>
+              <td></td>
+              <td>$1036.00</td>
+              <td></td>
+            </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="stephen_hornbeek@yahoo.com">
+
+  <!-- Specify a Buy Now button. -->
+  <input type="hidden" name="cmd" value="_xclick">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  <input type="hidden" name="item_name" value="Kit HomeLab">
+  <input type="hidden" name="amount" value="1036.00">
+  <input type="hidden" name="currency_code" value="USD">
+
+  <!-- Display the payment button. -->
+  <input type="image" name="submit" border="0"
+  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+  alt="Buy Now">
+  <img alt="" border="0" width="1" height="1"
+  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+</form>
+
+
+
+<h1>Kit_1.0 HomeLab Requirements. </h1>
+
+
+
+<h2 class="padding1">Powerful & Low Cost!!! The above parts list is my best take at assembling a homelab for around 1k.  The goal for this list is to make a basic entry level homelab kit that is a good starting point to enter the space.</h2>
+
+
+<h2 class="padding1">The design uses 2u of the 12u rack space leaving you 10u of space to add in servers, switches, firewalls, power sources, and anything else that you might want to add to improve your network. (You will have room to grow!)</h2>
+
+<h2 class="padding1">The Switch is unmanaged but that's ok you will have many other things to work on when setting up your server for the first time so a plug and play switch works nice as a beginner. You might want to look for a 24 port solutions if your looking to scale your network in the future.</h2>
+
+
+<h2 class="padding1">Pros: Low cost, Room to Scale Up, Powerful server</h2>
+
+<h2 class="padding1">Cons: Loud when running at full power, Minimal gb storage space, Switch could be upgraded</h2>
+
+ 
+
+<h2 class="padding1">This Kit is a good example of all the items you will need when building your home cloud. If it were ice cream it would be vanilla, nothing to exciting but it will work great.</h2>
+
+<h2 class="padding1"> A quick note: You will need a monitor with a vga port and usb keyboard to set up the server when first getting started. If you don't have them lying around the house you will have to purchase theses items or borrow them from a friend).</h2>
+ 
+
+<h2 class="padding1">This Kit_1.0 is for people like me that want to get started in homelabing on a tight budget. </h2> 
+
+
+<h2 class="padding1">Thanks for your time,</h2> 
+
+<!-- <h2 class="padding1">If you have any thoughts on, better equipment, something I left out, or how to improve this configuration please email me at: <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Help%20Stop%20School%20Shootings%20Today" target="_top">Stephen_Hornbeek@yahoo.com</a></h2> -->
+
+<h2 class="padding1">Stephen</h2>
+
+
+<h1 class="paddinga">Don't be afraid to shop around</h1>
+
+<h2 class="padding1">Most companies and people are looking to sell something. That's not us. You can buy the components through us, but you don't have too. That's what makes this site great.</h2>
+
+<h2 class="padding1">All of Kit's components are hand selected to create a valuable cloud network for a fraction of the cost of using an IT company.  We did the research so you don't have too! </h2>
+
+
+<h2 class="padding1">Purchase from us or use the links to purchase anything you need through reputable online vendors like Amazon and Ebay.</h2>
+
+
+
+
+
+ 
+<h1 class="paddinga"> Kit_1.0 step by step tutorials </h1>
+
+<h2 class="padding1">Once you have your components you can use our free step by step totorials to build out your home lab.</h2>
+
+
+
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/zPQvwo8mxQA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+
+
+
+
+
+
+
+<p class="bump">Kit CloudLab Components</p>
+
+<!--<h1 class="paddinga">Every homelab is different. </h1>
+
+<h2 class="padding1">Most kits will not be a fit for your needs. That's Ok. The goal is to be a resource for different types of network configurations. Three different Kits are available. Each Kit solves a problem.</h2>
+
+
+  <div class="row">
+
+   <div class='col-md-4 col-xs-11'><img class="clip-circle" src="images/1.0.png" alt="Mattel_Radica_FisherPrice"> 
+  <li><a href="http://www.coroflot.com/stephen_hornbeek/Mattel-Design" target="_blank"><strong>KIT_1.0 STARTER KIT </strong></a></li>
+  </div>
+
+   <div class='col-md-4 col-xs-11'><img class="clip-circle" src="images/2_0kit.png" alt="Radica"> 
+  <li><a href="http://www.coroflot.com/stephen_hornbeek/Mattel-Design" target="_blank"><strong>KIT_2.0 CONTROLE & STORAGE KIT</strong></a></li>
+  </div>
+
+    <div class='col-md-4 col-xs-11'> <img class="clip-circle" src="images/3.0.png" alt="Fisher Price ">
+  <li><a href="http://www.coroflot.com/stephen_hornbeek/Mattel-Design" target="_blank"><strong>KIT_3.0 HOME BUSINESS KIT</strong></a></li>
+  </div>
+
+</div>
+
+
+
+<h1 class="paddinga"> What types of problems do we solve?</h1>
+
+<h2 class="padding1">Media, Security, Network Storage, File Serving, Personal Cloud, and Entertainment. Home Lab Kits Parts List are assembled to meet specifc users cases. 
+</h2> 
+    -->  
+
+<h1 class="paddinga">How Long is each Kit available?</h1>
+
+<h2 class="padding1">The parts lists for each Kit are on the site for forever. Comeback any time to get the plans. The specific servers listed in each kit will sell out quickly. 
+</h2> 
+
+
+<h1 class="paddinga">My Servers not available. What do I do?</h1>
+
+<h2 class="padding1"> First off don't panic. Then you can use this great tool called <a href="https://www.labgopher.com" class="dropdown-toggle active">LabGopher</a>.  LabGopher lets you search all the available servers on ebay and will give you the best price. It is very easy to use. You can also contact me at <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Help%20Stop%20School%20Shootings%20Today" target="_top">Stephen_Hornbeek@yahoo.com</a> and I can help you select something that will fit your needs! 
+</h2> 
+
+
+
+<h1 class="paddinga">Why buy a Kit when I could use the Cloud?</h1>
+
+ <center><img class=""   src="images/cloudkit.png" alt="kit"></center>
+
+<h2 class="padding1"> You have made it this far and that is great! We have come all this way and have not once talked about the cloud, and cloud companies like Google, Microsoft and Amazon. Everyone will tell you to host your data on the could, that it cost less and is easy to use. For most people this is true. 
+</h2> 
+
+
+<h2 class="padding1">Most people will never see or own an enterprise server. The majority of users needs can all be solved by hosting data in the cloud. </h2> 
+
+<h2 class="padding1">But... for those of you that want a home server let's take a look at this quick example that shows the cost to host 1 instance with 64gb of RAM. You can see each companies cost structures listed below. </h2>
+
+
+<h2 class="padding1">I recommend you experiment with different prices yourself on UNIGMA. It's a great tool to use to get multiple cost from different cloud provider all at once.</h2>
+
+
+<div class="abcde ">
+<center><input type="button" class="btn btn-info abcd" value="UNIGMA Calculator" onclick=" relocate_home()"></center>
+
+<script>
+function relocate_home()
+{
+     location.href = "https://calculator.unigma.com/#/instances";
+} 
+</script>
+</div>
+
+<h1>Lets look at the below example to host 1 instance with 64gb of RAM running 24 hours 7 days a week</h1>
+
+ 
+      
+
+
+ <div class="row">
+
+  
+  <div class='col-xs-4 '><img class="clip-circle1" src="images/awslogo.png" alt="AWS Logo">  
+  <li><center><a href="https://calculator.s3.amazonaws.com/index.html" target="_blank"><strong>AWS Webservers</strong></a><p class="dark">Amazon Web Services Pricing Calculator </p>  <img class="clip-circle1"   src="images/awscost.png" alt="kit"></center></li>
+  </div>
+
+
+
+    <div class='col-xs-4 '><center><img class="clip-circle1" src="images/googlelogo.png" alt="Google Cloud"> 
+  <li><center><a href="https://cloud.google.com/products/calculator/" target="_blank"><strong>Google Cloud</strong></a><p class="dark">Google Cloud Pricing Calculator </p><img class="clip-circle1"   src="images/googlecost.png" alt="kit"></center></li>
+  </div>
+
+
+
+   <div class='col-xs-4 '><img class="clip-circle1" src="images/miclogo.png" alt="Microsoft Cloud"> 
+  <li><center><a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank"><strong>Microsoft Cloud</strong></a><p class="dark">Microsoft Azure Pricing Calculator</p><img class="clip-circle1 "   src="images/azurcost.png" alt="kit"></center></li>
+  </div>
+</div>
+
+
+
+
+<h2 class="padding1"> Looking at the above 64gb example Kit HomeLab has more RAM with 96gb of RAM compaired to the cloud at 64gb. <strong>So using our 64gb memory spec example you would have payed for the Kit_1.0 Homelab in 2 - 5  months.</strong> You do get more Cores (processing power) with the cloud providers and they will always have a faster upload speed connection. </h2> 
+
+
+<h2 class="padding1">With the money you save you can add more processing power to your network in the future.</h2>
+
+<!-- <h1 class="paddinga">It's the future! </h1> 
+
+<h2 class="padding1"> Lets add 2 more HP Proliant dl360 duel core servers into the network! </h2> 
+
+<div class="row">
+   <div class='col-md-6 col-xs-11'><img class="clip-circle" src="images/1.0_a2.png" alt="SST_bot">   
+  </div>
+
+
+  <div class='col-md-6 col-xs-11'><img class="clip-circle" src="images/1.0_a1.png" alt="Stop School Shootings Today"">   
+  </div>
+</div>
+
+
+<h2 class="padding1">This makes for 3 servers total with 6 cores total. Just under the 8 cores AWS and Microsoft shows in the example. </h2>
+
+<h2 class="padding1">An HP Proliant G7 DL360 server with 96gb of RAM cost $360. If you get 2 servers the total cost is $720. But now you have 6 cores! </h2>
+
+  <h2 class="padding1">This is almost the same processing power as the above AWS and Azure example for a total a total cost of $1756.00. </h2> -->
+
+   <h2 class="padding1"> You will have some aditional expences for setup and instalation hardware but <strong>In the end you can own the equiment for under 2k or about the cost of 10 months of cloud hosting fees!</strong> Not to mention your total RAM would be 288gb. Thats A lot of memory!</h2>
+
+
+
+<!-- <h1>So what about power consumption? The equipment might be around 2k but how much will my electric bill be?</h1> 
+
+<h2 class="padding1">Lets take a look at the power consumption of the HP Proliant DL360 Server. In the end its about the cost of running a second refugridrater. Lets look at the max watage and amps... </h2>
+
+<h2 class="padding1">Find the voltage and amperage of the refrigerator; for instance, you may see "115 V" and "6.5 amps." Multiplying these two numbers tells you how many watts your refrigerator uses -- in this case, 747.5 watts. Smaller refrigerators typically use about 350 watts, while larger models use as much as 780 watts.</h2>
+
+<center><img class="clip-circle2" src="images/SS.png" alt="SST_bot"> </center>  -->
+ 
+
+
+
+       
+
+
+
+<h1>Kit HomeLab's are a powerful alternative to traditional cloud computing companies.</h1> 
+
+
+<h2 class="padding1">Kit puts the power of cloud servers like aws right into your hands giving you more control over your data. Kit provides powerful computing power only seen in large data centers. </h2> 
+
+<!--
+<h1>Kit brings the cloud to You!</h1>
+
+
+
+
+
+
+ 
+
+   <img class="container"   src="images/sizechart.png" alt="Robot Or Man.">
+
+
+
+  Here is a table of some compariable hosting plans as of 2018 and there montly running cost. Kit home lab prices are only locked in at the time of purchase. Servers abibility makes prices subject to change. So if you like the specs and the rice lock in your Kit HomeLad today. 
+
+<p class="p1">Pros and cons: </p>
+<p class="p1">Con most are sata and not sas</p>
+  
+ 
+
+
+<p>You can easily spend 10,000 for one server and still have the cost of the home network expences. If you already have cableinternet at home and want a powerfull all in one solution Kit is it. I have attached some server prices just so you can see whats available for 6k</p> 
+<p>HPE ProLiant DL360 Gen10 - rack-mountable - Xeon Gold 6132 2.6 GHz - 32 GB  Price $4,576.99</p>
+<p>HP ProLiant DL360 G9 SFF 1U Server, 2x E5-2680v3 2.5GHz 12C, 16GB DDR4, 8x 1.92TB SATA 2.5 SSDs, HP iLO 4, Power Supplies
+REFURBISHED Price $11,358.00</p>
+
+
+
+<p class="p1">A / B. Home & Tower servers are great home solutions but they do not provide the memory and computing power that an enterprise rack servers provides.  Tower servers have no place to add the moduem and router if your building out your lab. </p>
+
+<p class="p1">C. Rack servers can be costly and confusing. Rack systems and HomeLabs can be neverending and expnsive. Wrong parts are cominlly ordered. Configureations and wiring can look sloppy. The systems tend to be large. Most racks start at 12u and go as high as 48u. </p>
+
+
+-->
+
+
+<h1 class="paddinga">Find your Server Using Labgopher</h1>
+
+<h1 class="padding1">LabGopher extracts information from active eBay listings to help you easily find the right hardware for your needs. </h1>
+
+
+ <center>  <div class=''><a href="https://www.labgopher.com/" title="Link to website" target="_blank"><center><img class="" src="https://image.ibb.co/hJ2RJ0/labgoupher.png" alt="Labgopher"> </a>
+  </div>
+
+ <div class="abcde ">
+ <input type="button" class="btn btn-info abcd" value="Labgopher" onclick=" relocate_home1()"></center>
+
+ <script>
+function relocate_home1()
+{
+     location.href = "https://www.labgopher.com/";
+} 
+ </script>
+</div></center>
+
+
+
+
+
+
+
+
+<h1 class="padding1">I share my FREE parts list and tutorials to help you setup your homelab. If the homelab kits listed aren't a good fit but you like to see new configurations then join the email list.</h1>
+
+<h1 class="padding1">I Design the first 4u so you don't have too!</h1>
+
+
+<div class="abcde ">
+ <center><input type="button" class="btn btn-info abcd" value="Meet Kit_1.0" onclick=" relocate_home()"></center>
+ 
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+ <script>
+function relocate_home()
+{
+     location.href = "http://kithomelab.com/about.html";
+} 
+ </script>
+</div>
+
+
+ Kit Homelab prices are only locked in at the time of purchase. Servers availability makes prices subject to change. So if you like the specs and the price lock in your Kit Homelab today. 
+
+If your interested in getting hands on with the cloud kit is a great start. Kit homelab is a hardware solution. We are not an IT service company, we do not support software services. Kit is an assembled home network hardware solution. All additional installations and software support will need to be done onsite by you or your technician. (C) 2018
+
+
+
+
+
+</html>
